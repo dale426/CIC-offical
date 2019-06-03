@@ -9,11 +9,30 @@
   min-width: 1200px;
   height: 46px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.layout__main-title{
+    display: inline-block;
+    font-weight: 500;
+    color: #000;
+    display: flex;
+    align-items: center;
+    .logo{
+        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+    }
 }
 .layout__menu-wrap {
+  font-family: "SourceHanSansSC-Regular";
+  opacity: 0.89;
   height: 46px;
   line-height: 46px;
   color: @base_color;
+  margin-right: 100px;
   .layout__menu-item {
     position: relative;
     float: left;
