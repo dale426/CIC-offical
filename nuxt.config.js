@@ -28,13 +28,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    'swiper/dist/css/swiper.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/axios'
+    '~/plugins/axios',
+    { src: '~/plugins/swiper.js', ssr: false },
   ],
 
   /*

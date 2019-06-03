@@ -1,8 +1,8 @@
 <template>
-    <div class="layout__main">
+    <div>
         <div class="layout__main-wraps">
             <div class="layout__main-title">
-                <img class="logo" :src="cic_logo" alt="logo">
+                <img class="logo" :src="cic_logo" alt="logo"/>
                 <span>中以西北国际科技创新中心</span>
             </div>
             <menu class="layout__menu-wrap clearfix" type="list">
@@ -42,18 +42,19 @@
     </div>
 </template>
 <script>
-import logo from '~/assets/img/logo@2x.png'
+import logo from '~/assets/img/logo@2x.png';
+
 export default {
-    name: 'layout_main',
+    name: 'MainWrap',
     data() {
         return {
             cic_logo: logo
-        }
-    },
 
+        }
+    }
 }
 </script>
 <style lang="less">
-@import "./main.less";
+@import "./main-wrap.less";
 </style>
 
