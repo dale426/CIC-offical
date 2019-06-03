@@ -1,0 +1,51 @@
+@import './common.less';
+
+.layout__main{
+}
+.layout__main-menu{
+    // width: 100%;
+    // background: #404040;
+    width: 1200px;
+    min-width: 1200px;
+    height: 46px;
+    margin: 0 auto;
+}
+.menu{
+    height: 46px;
+    line-height: 46px;
+  color: @base_color;
+  .menu-item{
+      position: relative;
+      float: left;
+      display: block;
+      padding: 0 20px;
+      cursor: pointer;
+  }
+  a{
+      display: block;
+      transition: all .3s;
+      color: @base_color;
+      &:hover{
+          color: @hover_color;
+          i{
+              color: @hover_color;
+          }
+      }
+      i{
+          transition: all .3s;
+          font-size: 20px;
+          color: @base_color;
+          display: inline-block;
+          font-style: normal;
+          vertical-align: middle;
+          text-align: center;
+          text-transform: none;
+          line-height: 1;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+      }
+  }
+  .menu-item-selected > a{
+      color: @hover_color;
+  }
+}

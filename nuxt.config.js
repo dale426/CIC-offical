@@ -34,14 +34,22 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/axios'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
-
+  axios: {
+    // proxyHeaders: false   // https://axios.nuxtjs.org/
+  },
+  proxy: {
+    '/api/': 'http://api.example.com',
+    '/api2/': 'http://api.another-website.com'
+  },
   /*
   ** Build configuration
   */
@@ -49,6 +57,10 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    loader: [{
+      test: /\.less$/,
+      loader: 'style-loader!css-loader!less-loader',
+    }],
     extend(config, ctx) {
     }
   }
