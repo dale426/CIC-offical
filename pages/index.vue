@@ -7,6 +7,10 @@
                         <img class="banner__item-img" :src="item.src">
                     </div>
                 </div>
+                <div class="swiper-button-prev"></div>
+                <!--左箭头。如果放置在swiper-container外面，需要自定义样式。-->
+                <div class="swiper-button-next"></div>
+                <!--右箭头。如果放置在swiper-container外面，需要自定义样式。-->
                 <div class="swiper-pagination swiper-pagination-bullets"></div>
             </div>
         </div>
@@ -40,13 +44,19 @@ export default {
                 slidesPerView: 'auto',
                 centeredSlides: true,
                 spaceBetween: 0, // 轮播图之间的间距
-                watchSlidesVisibility : true,
-                controller: true,
+                watchSlidesVisibility: true,
+                mousewheel: true, //鼠标滚动
+                // 前后导航
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true, // 分页器点击
                     dynamicBullets: false // 动态分页器，当你的slide很多时，开启后，分页器小点的数量会部分隐藏。
                 },
+                controller: true,
                 on: {
                     slideChange() {
                         console.log('onSlideChangeEnd', this);
@@ -60,13 +70,16 @@ export default {
         }
     },
     mounted() {
+        // var mySwiper = new Swiper('.swiper-container', {
+        // //controller: true,
+        // });
         // setInterval(() => {
         //     console.log('simulate async data')
         //     if (this.swiperSlides.length < 10) {
         //         this.swiperSlides.push(this.swiperSlides.length + 1)
         //     }
         // }, 3000)
-        
+
     },
     components: {
 
